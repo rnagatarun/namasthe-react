@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <!-- This won't be updated by react -->
+    <h1>!!Hello World From HTML!!</h1>
+    <div id="root">
+      <!-- Script for CDN loading of react and react-dom -->
+
+    <!-- React will replace this -->
+    <h1>HTML!!</h1>
+
+      <script
+        crossorigin
+        src="https://unpkg.com/react@18/umd/react.development.js"
+      ></script>
+      <script
+        crossorigin
+        src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+      ></script>
+
+      <!-- Loading the actual react logic from app.js -->
+      <script src="./app.js"></script>
+    </div>
+  </body>
+</html>
