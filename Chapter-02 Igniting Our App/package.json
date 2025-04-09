@@ -2,10 +2,6 @@
   "name": "namasthereact",
   "version": "1.0.0",
   "description": "This is a namasthe react practice",
-  "keywords": [
-    "nagatarun",
-    "react"
-  ],
   "homepage": "https://github.com/rnagatarun/namasthe-react#readme",
   "bugs": {
     "url": "https://github.com/rnagatarun/namasthe-react/issues"
@@ -17,8 +13,14 @@
   "license": "ISC",
   "author": "NagaTarun",
   "type": "commonjs",
-  "main": "index.js",
   "scripts": {
     "test": "jest"
+  },
+  "devDependencies": {
+    "parcel": "^2.14.4"
+  },
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
   }
 }
