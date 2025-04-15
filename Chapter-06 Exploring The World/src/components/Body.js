@@ -33,11 +33,22 @@ const Body = () => {
     <div className="body">
       <div className="filter">
         <div className="search">
-          <input type="text" placeholder="Search" className="search-box" value={searchText} onChange={(e) => setSearchText(e.target.value)}/>
-          <button onClick={() => {
-            const filteredListOfRestaurants = listOfRestaurants.filter(restaurant => restaurant.info.name.toLowerCase().includes(searchText.toLowerCase()));
-            setFilteredRestaurants(filteredListOfRestaurants);
-          }}>Search</button>
+          <input
+            type="text"
+            placeholder="Search by name"
+            className="search-box"
+            value={searchText}
+            onChange={(e) => {
+              setSearchText(e.target.value);
+              const filteredListOfRestaurants = listOfRestaurants.filter(
+                (restaurant) =>
+                  restaurant.info.name
+                    .toLowerCase()
+                    .includes(e.target.value.toLowerCase())
+              );
+              setFilteredRestaurants(filteredListOfRestaurants);
+            }}
+          />
         </div>
         <button
           className="filter-btn"
