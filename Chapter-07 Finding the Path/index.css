@@ -26,6 +26,12 @@
     justify-content: flex-start; /* Align cards to the left */
 }
 
+/* Remove default blue color and underline */
+.res-container a {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit color from parent or set a custom color */
+  }
+
 .res-card {
     width: 100%; /* Make the card take the full width of its parent */
     max-width: 200px; /* Optional: Limit the maximum width */
