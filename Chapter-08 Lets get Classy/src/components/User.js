@@ -1,10 +1,11 @@
 import './User.css';
 
-const User = () => {
+const User = (props) => {
+    const {name, location} = props
     return(
         <div className="user-card">
-            <h2>Name: Tarun</h2>
-            <h3>Location: Banglore</h3>
+            <h2>Name: {name}</h2>
+            <h3>Location: {location}</h3>
             <h4>contact: @naga_tarun</h4>
         </div>
     );
