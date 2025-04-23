@@ -80,3 +80,5 @@ API calls are typically made inside the `componentDidMount` lifecycle method bec
 ---
 
 This explanation provides a clear understanding of why `componentDidMount` is the preferred place for API calls and how the lifecycle works with multiple child components.
+
+![alt text](image.png)
