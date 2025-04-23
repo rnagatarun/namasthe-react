@@ -21,7 +21,7 @@ class About extends Component {
         <p>We are dedicated to providing the best service possible.</p>
         <User name={"Naga Tarun(Function)"} location={"Banglore"} />
 
-        <UserClass name={"Naga Tarun(Class)"} location={"Banglore"} />
+        <UserClass />
       </div>
     );
   }
