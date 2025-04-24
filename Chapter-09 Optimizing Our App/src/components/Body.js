@@ -3,15 +3,25 @@ import { useState } from "react";
 import Shimmer from "./Shimmer.js";
 import { Link } from "react-router-dom";
 import useRestaurants from "../utils/useRestaurants.js";
+import useOnlineStatus from "../utils/useOnlineStatus.js";
 
 const Body = () => {
   const [searchText, setSearchText] = useState("");
   const listOfRestaurants = useRestaurants();
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
+  const onlineStatus = useOnlineStatus();
 
   // Update filteredRestaurants immediately after listOfRestaurants is fetched
   if (filteredRestaurants.length === 0 && listOfRestaurants.length > 0) {
     setFilteredRestaurants(listOfRestaurants);
+  }
+
+  if (onlineStatus === false) {
+    return (
+      <h1>
+        You are Offline. Please check your internet connection and Try Again!
+      </h1>
+    );
   }
 
   // Conditional rendering
