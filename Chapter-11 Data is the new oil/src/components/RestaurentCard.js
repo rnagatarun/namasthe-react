@@ -15,4 +15,20 @@ const RestaurantCard = (props) => {
   );
 };
 
+//Higher Order Component
+// input - Restaurant Card ==> OfferedRestaurantCard
+
+export const withOfferLabel = (RestaurantCard) => {
+  return (props) =>{
+    const { header } = props.resData.info.aggregatedDiscountInfoV3;
+    return(
+      <div className="relative">
+      <label className="absolute bg-black px-2 py-1 text-white rounded-lg">{header}</label>
+      <RestaurantCard {...props}/>
+      </div>
+    );
+  }
+
+}
+
 export default RestaurantCard;

@@ -1,4 +1,4 @@
-import RestaurantCard from "./RestaurentCard";
+import RestaurantCard, { withOfferLabel } from "./RestaurentCard";
 import { useState } from "react";
 import Shimmer from "./Shimmer.js";
 import { Link } from "react-router-dom";
@@ -10,6 +10,8 @@ const Body = () => {
   const listOfRestaurants = useRestaurants();
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
   const onlineStatus = useOnlineStatus();
+
+  const RestaurantCardWithOffer = withOfferLabel(RestaurantCard);
 
   // Update filteredRestaurants immediately after listOfRestaurants is fetched
   if (filteredRestaurants.length === 0 && listOfRestaurants.length > 0) {
@@ -50,19 +52,18 @@ const Body = () => {
         </div>
 
         <div>
-        <button
-          className="filter-btn p-2 m-3 bg-green-200 rounded-lg cursor-pointer"
-          onClick={() => {
-            const filteredListOfRestaurants = listOfRestaurants.filter(
-              (res) => res.info.avgRating > 4.1
-            );
-            setFilteredRestaurants(filteredListOfRestaurants);
-          }}
-        >
-          Top Rated Restaurants
-        </button>
+          <button
+            className="filter-btn p-2 m-3 bg-green-200 rounded-lg cursor-pointer"
+            onClick={() => {
+              const filteredListOfRestaurants = listOfRestaurants.filter(
+                (res) => res.info.avgRating > 4.1
+              );
+              setFilteredRestaurants(filteredListOfRestaurants);
+            }}
+          >
+            Top Rated Restaurants
+          </button>
         </div>
-
       </div>
       <div className="res-container flex flex-wrap ">
         {filteredRestaurants.map((restaurant) => {
@@ -71,7 +72,13 @@ const Body = () => {
               key={restaurant.info.id}
               to={`restaurants/${restaurant.info.id}`}
             >
-              <RestaurantCard resData={restaurant} />
+              {/** If the restaurant provides discounts add a discount label to it */}
+
+              {restaurant.info.aggregatedDiscountInfoV3.header ? (
+                <RestaurantCardWithOffer resData={restaurant} />
+              ) : (
+                <RestaurantCard resData={restaurant} />
+              )}
             </Link>
           );
         })}
