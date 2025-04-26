@@ -74,7 +74,7 @@ const Body = () => {
             >
               {/** If the restaurant provides discounts add a discount label to it */}
 
-              {restaurant.info.aggregatedDiscountInfoV3.header ? (
+              {restaurant.info?.aggregatedDiscountInfoV3?.header ? (
                 <RestaurantCardWithOffer resData={restaurant} />
               ) : (
                 <RestaurantCard resData={restaurant} />
