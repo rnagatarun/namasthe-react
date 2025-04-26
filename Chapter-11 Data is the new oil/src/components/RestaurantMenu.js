@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Shimmer from "./Shimmer";
 import { useParams } from "react-router-dom";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
@@ -7,7 +7,11 @@ import RestaurantCategory from "./RestaurantCategory";
 const RestaurantMenu = () => {
   const { resId } = useParams();
   const resInfo = useRestaurantMenu(resId);
-
+  const [showIndex, setShowIndex] = useState(null);
+  const handleSetShowIndex = (index) => {
+    // Toggle the accordion: collapse if the same index is clicked
+    setShowIndex((prevIndex) => (prevIndex === index ? null : index));
+  };
   // console.log("Restaurant ID:", resId);
 
   const { name, cuisines, costForTwo } =
@@ -34,9 +38,15 @@ const RestaurantMenu = () => {
         {cuisines?.join(", ")} - {costForTwo / 100}
       </p>
 
-      {categories?.length > 0 && categories.map((category,index) => (
-        <RestaurantCategory key={category.card?.card?.title || index} data={category.card?.card}/>
-      ))}
+      {categories?.length > 0 &&
+        categories.map((category, index) => (
+          <RestaurantCategory
+            key={category.card?.card?.title || index}
+            data={category.card?.card}
+            showItems={index === showIndex ? true : false}
+            setShowIndex={() => handleSetShowIndex(index)}
+          />
+        ))}
     </div>
   );
 };
