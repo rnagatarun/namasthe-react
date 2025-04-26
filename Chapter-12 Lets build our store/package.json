@@ -1,0 +1,33 @@
+{
+  "name": "namasthereact",
+  "version": "1.0.0",
+  "description": "This is a namasthe react practice",
+  "homepage": "https://github.com/rnagatarun/namasthe-react#readme",
+  "bugs": {
+    "url": "https://github.com/rnagatarun/namasthe-react/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rnagatarun/namasthe-react.git"
+  },
+  "license": "ISC",
+  "author": "NagaTarun",
+  "type": "commonjs",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "clean": "rm dist .parcel-cache"
+  },
+  "devDependencies": {
+    "parcel": "^2.14.4"
+  },
+  "dependencies": {
+    "@tailwindcss/postcss": "^4.1.4",
+    "react": "^19.1.0",
+    "react-router-dom": "^6.16.0",
+    "tailwindcss": "^4.1.4"
+  },
+  "browserslist": [
+    "last 5 versions"
+  ]
+}
