@@ -10,6 +10,8 @@ import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import "../index.css";
 import RestaurantMenu from "./components/RestaurantMenu";
 import UserContext from "./utils/UserContext";
+import appStore from "./utils/appStore";
+import { Provider } from "react-redux";
 
 //Lazy loading import
 const Grocery = lazy(() => import("./components/Grocery"));
@@ -27,7 +29,8 @@ const AppLayout = () => {
   }, []);
 
   return (
-    //Outside this context "Default User" is used
+    <Provider store={appStore}>
+    {/* Outside this context "Default User" is used */}
     <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
       {/* Entire App uses the value={{ loggedInUser: userName }} i.e NagaTarun */}
       <div className="app">
@@ -35,6 +38,7 @@ const AppLayout = () => {
         <Outlet />
       </div>
     </UserContext.Provider>
+    </Provider>
   );
 };
 
