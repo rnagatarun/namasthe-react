@@ -23,7 +23,7 @@ const RestaurantMenu = () => {
         category.card?.card?.["@type"] ===
         "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
     );
-  console.log(categories);
+  // console.log(categories);
 
   // const itemCards =
   //   resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card ?? {};

@@ -1,6 +1,14 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { addItem } from "../utils/cartSlice";
 
 const Itemlist = ({ items }) => {
+  const dispatch = useDispatch();
+  const handleAddItem = (item) => {
+    //Dispatch an action
+    dispatch(addItem(item)); 
+  }
+
   return (
     <div>
       {items?.length > 0 ? (
@@ -27,7 +35,12 @@ const Itemlist = ({ items }) => {
               </div>
               <div className="image">
                 <div className="absolute">
-                  <button className="p-1 mx-6 rounded-lg bg-black text-white shadow-lg">Add +</button>
+                  <button
+                    className="p-1 mx-6 rounded-lg bg-black text-white shadow-lg cursor-pointer"
+                    onClick={() => handleAddItem(item)}
+                  >
+                    Add +
+                  </button>
                 </div>
                 <img
                   className="menu-item-image w-24 h-24 object-cover rounded-lg"
