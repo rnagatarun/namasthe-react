@@ -16,8 +16,9 @@ const Body = () => {
   const RestaurantCardWithOffer = withOfferLabel(RestaurantCard);
 
   // Update filteredRestaurants immediately after listOfRestaurants is fetched
-  if (filteredRestaurants.length === 0 && listOfRestaurants.length > 0) {
+  if (filteredRestaurants.length === 0 && listOfRestaurants?.length > 0) {
     setFilteredRestaurants(listOfRestaurants);
+    console.log(listOfRestaurants);
   }
 
   if (onlineStatus === false) {
@@ -29,13 +30,14 @@ const Body = () => {
   }
 
   // Conditional rendering
-  return listOfRestaurants.length === 0 ? (
+  return listOfRestaurants?.length === 0 ? (
     <Shimmer />
   ) : (
     <div className="body">
       <div className="filter flex">
         <div className="search">
           <input
+            data-testid="searchbyname"
             type="text"
             placeholder="Search by name"
             className="search-box m-4 p-1 border border-black"
@@ -77,7 +79,7 @@ const Body = () => {
           />
         </div>
       </div>
-      <div className="res-container flex flex-wrap ">
+      <div className="res-container flex flex-wrap" data-testid="res-container">
         {filteredRestaurants.map((restaurant) => {
           return (
             <Link

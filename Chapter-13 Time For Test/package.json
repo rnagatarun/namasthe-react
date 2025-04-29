@@ -17,7 +17,8 @@
     "start": "parcel index.html",
     "build": "parcel build index.html",
     "clean": "rm dist .parcel-cache",
-    "test": "jest"
+    "test": "jest",
+    "watch-test":"jest --watch"
   },
   "devDependencies": {
     "@babel/core": "^7.26.10",
