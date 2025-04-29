@@ -1,0 +1,76 @@
+{
+    "@type": "type.googleapis.com/swiggy.presentation.food.v2.Restaurant",
+    "info": {
+        "id": "740737",
+        "name": "Pizza Hut",
+        "cloudinaryImageId": "RX_THUMBNAIL/IMAGES/VENDOR/2025/4/9/c53da747-db56-4472-ba22-2649cdb567e8_740737.jpg",
+        "locality": "Mahadevapura",
+        "areaName": "Panathur",
+        "costForTwo": "₹350 for two",
+        "cuisines": [
+            "Pizzas"
+        ],
+        "avgRating": 4.2,
+        "parentId": "721",
+        "avgRatingString": "4.2",
+        "totalRatingsString": "1.3K+",
+        "sla": {
+            "deliveryTime": 34,
+            "lastMileTravel": 1.4,
+            "serviceability": "SERVICEABLE",
+            "slaString": "30-35 mins",
+            "lastMileTravelString": "1.4 km",
+            "iconType": "ICON_TYPE_EMPTY"
+        },
+        "availability": {
+            "nextCloseTime": "2025-04-30 02:00:00",
+            "opened": true
+        },
+        "badges": {},
+        "isOpen": true,
+        "type": "F",
+        "badgesV2": {
+            "entityBadges": {
+                "imageBased": {},
+                "textBased": {},
+                "textExtendedBadges": {}
+            }
+        },
+        "aggregatedDiscountInfoV3": {
+            "header": "50% OFF",
+            "subHeader": "UPTO ₹100"
+        },
+        "orderabilityCommunication": {
+            "title": {},
+            "subTitle": {},
+            "message": {},
+            "customIcon": {}
+        },
+        "differentiatedUi": {
+            "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+            "differentiatedUiMediaDetails": {
+                "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+                "lottie": {},
+                "video": {}
+            }
+        },
+        "reviewsSummary": {},
+        "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+        "restaurantOfferPresentationInfo": {},
+        "externalRatings": {
+            "aggregatedRating": {
+                "rating": "--"
+            }
+        },
+        "ratingsDisplayPreference": "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY"
+    },
+    "analytics": {
+        "context": "seo-data-fe7addbe-c318-425c-95af-ffe8f33ab42b"
+    },
+    "cta": {
+        "link": "https://www.swiggy.com/city/bangalore/pizza-hut-mahadevapura-panathur-rest740737",
+        "text": "RESTAURANT_MENU",
+        "type": "WEBLINK"
+    },
+    "widgetId": "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo"
+}
